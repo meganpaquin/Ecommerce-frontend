@@ -1,0 +1,30 @@
+.product{
+    border: 2px solid black;
+    width: 200px;
+    background-color: #f1ab86;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px gray, -1px -1px 5px;
+}
+
+.product img, .product figure{
+    padding: 0;
+    margin: 0;
+}
+
+.product img{
+    margin: 5px auto;
+    border-radius: 5px;
+}
+
+.product figcaption{
+    width: 150px;
+    margin: 0 24px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+.product QuantityPicker{
+    margin: 5px;
+}
+

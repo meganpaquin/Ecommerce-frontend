@@ -1,0 +1,27 @@
+.quantitypicker{
+    color: #1E2D2F;
+}
+
+.quantitypicker button{
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+    background-color: #1E2D2F;
+    color: #F1AB86;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 0 2px;
+}
+
+.quantitypicker label{
+    font-size: 18px;
+    background-color: #1E2D2F;
+    color: #F1AB86;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 1px 8px 2px 8px;
+}

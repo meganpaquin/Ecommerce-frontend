@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.App h1{
+  margin: 0;
+  background-color: #041F1E;
+  color: #f7DBA7;
+  padding: 5px;
+}
