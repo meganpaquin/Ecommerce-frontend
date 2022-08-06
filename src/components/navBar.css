@@ -15,4 +15,11 @@
     margin: 10px;
     border-radius: 15px;
     box-shadow: 1px 1px 5px grey, -1px -1px 5px grey;
+    cursor: pointer;
+}
+
+.navBar li:hover{
+    border: 1px solid #f7DBA7;
+    padding: 4px;
+    text-decoration: underline;
 }

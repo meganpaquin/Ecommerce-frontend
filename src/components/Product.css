@@ -14,17 +14,33 @@
 .product img{
     margin: 5px auto;
     border-radius: 5px;
+    width: 150px;
+    height: 150px;
 }
 
-.product figcaption{
+.product textarea{
     width: 150px;
     margin: 0 24px;
     text-align: left;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
+    background-color: transparent;
+    border: none;
+    resize: none;
 }
 
-.product QuantityPicker{
+.product .quantitypicker{
     margin: 5px;
+}
+
+.product span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin: 1px 5px 5px 5px;
+}
+
+.product #total{
+    color: red;
+    font-weight: 600;
 }
 

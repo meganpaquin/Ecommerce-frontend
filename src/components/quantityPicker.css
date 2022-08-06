@@ -13,6 +13,11 @@
     justify-content: center;
     border: 1px solid black;
     margin: 0 2px;
+    cursor: pointer;
+}
+
+.quantitypicker button:hover{
+    border: 2px solid #f7DBA7;
 }
 
 .quantitypicker label{
