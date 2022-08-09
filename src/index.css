@@ -11,8 +11,7 @@ body {
     sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('https://image.shutterstock.com/image-photo/colorful-tailoring-objects-on-white-260nw-611543258.jpg');
-  background-size: cover;
+  background-color: #f7DBA7;
 }
 
 code {

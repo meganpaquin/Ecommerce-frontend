@@ -44,3 +44,23 @@
     font-weight: 600;
 }
 
+.product #button-area{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.product button{
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+    background-color: #1E2D2F;
+    color: #F1AB86;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 4px 15px;
+    cursor: pointer;
+}
+

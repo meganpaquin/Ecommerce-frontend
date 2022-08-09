@@ -1,12 +1,9 @@
 import './navBar.css'
 
-const NavBar = () => {
+const NavBar = (inputs) => {
     return (
         <div className = 'navBar'>
-            <li>Home</li>
-            <li>Deals</li>
-            <li>Contact</li>
-            <li>About</li>
+            <li>{inputs.data}</li>
         </div>
     );
 }
