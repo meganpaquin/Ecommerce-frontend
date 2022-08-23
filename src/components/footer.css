@@ -1,11 +1,12 @@
 .footer{
-    color: #F7DBA7;
-    background: #041F1E;
+    color: black;
+    background: #f3e5d0;
     text-align: center;
     padding: 10px;
     position: fixed;
     width: 100%;
     bottom: 0;
+    opacity: .80;
 }
 
 .footer h6{

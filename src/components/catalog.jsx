@@ -1,10 +1,10 @@
-import './Catalog.css';
+import './catalog.css';
 import Product from './Product';
 import { useEffect } from 'react';
     //works like window.onload
 import DataService from '../services/dataService';
 import { useState } from 'react';
-import NavBar from './navBar';
+import Categories from './categories';
 
 let i;
 
@@ -36,14 +36,14 @@ const Catalog = () => {
         <div className='catalog'>
             
 
-            <div className='categories'>
+            <div className='filter'>
                 {categories.map((d) =>
                 (
-                    <NavBar key={d} data={d}></NavBar>
+                    <Categories key={d} data={d}></Categories>
                 ))}
             </div>
 
-            <div className='inventory'>
+            <div className='inventory container'>
                 { products.map((d) => 
                 (<Product key={d._id} data={d}></Product>))}
             </div>

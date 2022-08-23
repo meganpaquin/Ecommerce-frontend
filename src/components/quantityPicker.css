@@ -4,7 +4,7 @@
 
 .quantitypicker button{
     width: 25px;
-    height: 25px;
+    height: 30px;
     font-size: 18px;
     background-color: #041F1E;
     color: #F1AB86;
@@ -21,12 +21,12 @@
 }
 
 .quantitypicker label{
-    font-size: 18px;
+    font-size: 16px;
     background-color: #041F1E;
     color: #F1AB86;
     font-weight: bold;
     text-align: center;
     justify-content: center;
     border: 1px solid black;
-    padding: 1px 8px 2px 8px;
+    padding: 2px 8px 2px 8px;
 }

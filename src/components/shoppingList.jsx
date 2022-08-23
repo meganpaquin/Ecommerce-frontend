@@ -9,7 +9,9 @@ const ShoppingList = () => {
 
     const printNow = () => {
         console.log('working');  
-        items.push(text);
+        let clone = [...items];
+        clone.push(text);
+        setItems(clone);
     };
 
     const textChange = (arg) => {
@@ -21,16 +23,20 @@ const ShoppingList = () => {
     return(
        //enter stuff here 
        <div className='shoppinglist'>
-        <h3>Your Shopping List</h3>            
-            <label>Add to List</label>
-            <input onChange={textChange} type="text" />
-            <button onClick={printNow}>Add</button>
-        <ul>
-            {items.map((item) =>
-            (
-            <li key={item}>{item}</li>
-            ))}
-        </ul>
+        <h3>Your Shopping List</h3> 
+            <div className='container'>        
+                <label>Add to List</label>
+                <input onChange={textChange} type="text" />
+                <button onClick={printNow}>Add</button>
+             
+                <ul>
+                    {items.map((item) =>
+                    (
+                    <li key={item}>{item}</li>
+                    ))}
+                </ul>
+
+        </div>  
        </div>
     );
 }

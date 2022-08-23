@@ -1,0 +1,12 @@
+.categories li{
+    list-style-type: none;
+    padding: 10px;
+}
+
+.categories{
+    display: inline-block;
+    background-color: #f3e5d0;
+    opacity: .8;
+    padding: 0;
+    margin: 0;
+}
