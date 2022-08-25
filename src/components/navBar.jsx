@@ -1,6 +1,13 @@
 import "./navBar.css";
+import {Link} from 'react-router-dom';
+import { useState, useContext } from 'react';
+import StoreContext from "../store/storeContext";
 
 const NavBar = () => {
+
+  const cart = useContext(StoreContext).cart
+
+
   return (
     <div className="nav">
       <nav className="navbar navbar-expand-lg bg-light">
@@ -8,24 +15,25 @@ const NavBar = () => {
          
           <div className="collapse navbar-collapse">
             <div className="navbar-nav">
-              <a className="nav-link active" href="/">
+              <Link className="nav-link active" to="/">
                 Home
-              </a>
-              <a className="nav-link" href="/about">
+              </Link>
+              <Link className="nav-link" to="/about">
                 About
-              </a>
-              <a className="nav-link" href="/catalog">
+              </Link>
+              <Link className="nav-link" to="/catalog">
                 Store
-              </a>
-              <a className="nav-link" href="/list">
+              </Link>
+              <Link className="nav-link" to="/list">
                 MyList
-              </a>
-              <a className="nav-link disabled" href='/admin'>Admin</a>
+              </Link>
+              <Link className="nav-link disabled" to='/admin'>Admin</Link>
             </div>
           </div>
         
         <form className="d-flex" role="search">
-            <button className="btn btn-outline-success" type="submit">Cart</button>
+            <Link className="btn btn-outline-success" type="submit" to="/cart">{cart.length}Cart
+            </Link>
         </form>
         </div>
       </nav>

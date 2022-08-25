@@ -1,14 +1,18 @@
 import './Product.css';
 import './quantityPicker';
 import QuantityPicker from './quantityPicker';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import StoreContext from '../store/storeContext';
+
 
 const Product = (properties) => {
 
     const [qunatity, setQuantity] = useState(0);
+    const addToCart = useContext(StoreContext).addToCart;
 
-    const add2Cart = () => {
+    const handleAddClicked = () => {
         console.log(properties.data.title);
+        addToCart(properties.data);
     };
 
     const onQtyChange = (qty) => {
@@ -32,7 +36,7 @@ return(
         
         <div id="button-area">
         <QuantityPicker onChange={onQtyChange}></QuantityPicker>
-        <button onClick={add2Cart}>🛒</button>
+        <button onClick={handleAddClicked}>🛒</button>
         </div>
     </div>
     );

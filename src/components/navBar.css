@@ -11,3 +11,16 @@
 .nav .navbar .navbar-collapse{
     width: 100%;    
 }
+
+.nav a{
+    text-decoration: none;
+    color: #a78338;
+}
+
+.nav a:hover{
+    color: black;
+}
+
+.nav .btn{
+    width: 80px;
+}
