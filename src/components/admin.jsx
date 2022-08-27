@@ -75,7 +75,7 @@ return (
 
             </section>
 
-            <section className = 'product'>
+            <section className = 'product discount'>
             <h3>Register Discounts</h3>
 
                 <div className="mb-3 row">

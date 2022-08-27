@@ -11,9 +11,11 @@ const AboutMe = () => {
 
     return(
         <div className='aboutme'>
-            <h3>Hi my name is:</h3>
-            <span>{name}</span>
-            <button onClick={toggleName}>Show Name:</button>
+            <h3>Let us help you build your project</h3>
+            
+            <div className='content'>
+                <h5>Shop By Category</h5>
+            </div>
         </div>
     );
 }

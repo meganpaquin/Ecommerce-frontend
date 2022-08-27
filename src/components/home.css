@@ -34,7 +34,7 @@
     text-align: center;
     color: #a78338;
     margin: 10px auto 0 auto;
-    width: 88%;
+    width: 92%;
     opacity: .80;
 }
 
@@ -46,4 +46,10 @@
     text-decoration: none;
     color: #a78338;
     font-size: 18px;
+}
+
+.home a:hover{
+    text-decoration: none;
+    color: #a78338;
+    font-weight: bold;
 }

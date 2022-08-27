@@ -7,6 +7,17 @@ const NavBar = () => {
 
   const cart = useContext(StoreContext).cart
 
+  const getNumItems = () => {
+    let sum=0;
+    
+    for(let i=0; i < cart.length; i++){
+      let item = cart[i];
+      sum += item.quantity;
+    }
+
+    return sum;
+  }
+
 
   return (
     <div className="nav">
@@ -32,7 +43,7 @@ const NavBar = () => {
           </div>
         
         <form className="d-flex" role="search">
-            <Link className="btn btn-outline-success" type="submit" to="/cart">{cart.length}Cart
+            <Link className="btn btn-outline-success" type="submit" to="/cart">{getNumItems()} Cart
             </Link>
         </form>
         </div>

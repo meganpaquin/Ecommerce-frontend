@@ -10,6 +10,7 @@ import GlobalState from './store/globalState';
 import Cart from './components/cart'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.min.js'
 import "./App.css";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 

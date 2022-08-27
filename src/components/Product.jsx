@@ -7,12 +7,12 @@ import StoreContext from '../store/storeContext';
 
 const Product = (properties) => {
 
-    const [qunatity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(0);
     const addToCart = useContext(StoreContext).addToCart;
 
     const handleAddClicked = () => {
-        console.log(properties.data.title);
-        addToCart(properties.data);
+        let clone = {...properties.data, quantity:quantity}
+        addToCart(clone);
     };
 
     const onQtyChange = (qty) => {
@@ -30,7 +30,7 @@ return(
             <figcaption><textarea cols="17" rows="3" value={properties.data.title} readOnly></textarea></figcaption>
         </figure>
         
-        <span id="total">Total: {(properties.data.price*qunatity).toFixed(2)}</span>
+        <span id="total">Total: {(properties.data.price*quantity).toFixed(2)}</span>
         
         <span id="price">Price: {properties.data.price.toFixed(2)}</span>
         
