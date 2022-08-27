@@ -1,6 +1,6 @@
 import "./navBar.css";
 import {Link} from 'react-router-dom';
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import StoreContext from "../store/storeContext";
 
 const NavBar = () => {

@@ -1,13 +1,6 @@
 import './aboutMe.css'
-import { useState } from 'react'
 
 const AboutMe = () => {
-    
-    const [name, setName] = useState('');
-
-    const toggleName = () => {
-        setName('Megan Paquin');
-    }
 
     return(
         <div className='aboutme'>

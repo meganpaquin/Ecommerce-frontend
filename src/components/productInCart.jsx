@@ -1,5 +1,5 @@
 import './productInCart.css'
-import {useState} from 'react';
+
 
 const ProductInCart = (properties) => {
 
