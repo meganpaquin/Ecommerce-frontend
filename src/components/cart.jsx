@@ -1,4 +1,5 @@
 import './cart.css'
+import { useContext } from 'react';
 import StoreContext from '../store/storeContext';
 import ProductInCart from './productInCart'
 

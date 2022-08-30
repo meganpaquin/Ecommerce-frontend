@@ -12,9 +12,9 @@ const Catalog = () => {
     const [products, setProducts] = useState([]);
     const [categories, setCategories] = useState([]);
 
-    const loadData = () => {
+    const loadData = async () => {
         let service = new DataService();
-        let data = service.getCatalog();
+        let data = await service.getCatalog();
         setProducts(data);
 
         let uniques = [];

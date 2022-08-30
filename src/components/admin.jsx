@@ -1,10 +1,12 @@
 import './admin.css';
 import { useState } from 'react';
+import DataService from '../services/dataService';
 
 const Admin = () => {
 
     const [product, setProduct] = useState({});
     const [discount, setDiscount] = useState({});
+    const [showSuccess, setShowSuccess] = useState(false);
 
     const textChange = (e) => {
         let value = e.target.value;
@@ -16,9 +18,23 @@ const Admin = () => {
         setProduct(copy);
     }
 
-    const saveProduct = () => {
+    const saveProduct = async () => {
         console.log('Saving Product');
         console.log(product);
+
+        //send to server
+        let fixedProduct = {...product};
+        fixedProduct.price = parseFloat(fixedProduct.price)
+
+        let instance = new DataService();
+        let savedProd = instance.saveProduct(fixedProduct);
+
+        if(savedProd && savedProd._id){
+            setShowSuccess(true);
+            setTimeout(() => {setShowSuccess(false)}, 6000 ); //miliseconds
+        }
+
+
     }
 
     const codeChange = (e) => {
@@ -43,6 +59,7 @@ return (
             <section className = 'product'>
                 <h3>Register Products</h3>
 
+                {showSuccess ? <section className='alert alert-success'>Product Saved</section> : null}
 
                 <div className="mb-3 row">
                     <label className="col-sm-2 col-form-label">Title</label>

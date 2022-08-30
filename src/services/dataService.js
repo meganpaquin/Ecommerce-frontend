@@ -1,3 +1,6 @@
+import axios from 'axios'
+
+
 const catalog = [
     {
         _id: '1',
@@ -117,11 +120,17 @@ const catalog = [
 
 class DataService{
     
-    getCatalog(){
+    async getCatalog(){
         //call the server
-        //get the list of products
-        //the server info will eventually go here, for now we are pulling from an array
-        return catalog;
+        let response = await axios.get("http://127.0.0.1:5000/api/catalog");
+
+        return response.data;
+        //return catalog;
+    }
+
+    async saveProduct(prod){
+        let response = await axios.post("http://127.0.0.1:5000/api/catalog", prod);
+        return response.data;
     }
 
 
