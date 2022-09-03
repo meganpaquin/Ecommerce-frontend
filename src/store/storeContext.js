@@ -2,12 +2,12 @@ import {createContext} from 'react';
 
 const StoreContext = createContext({
     cart: [],
-    user: {},
-    
+    user: "",
+
 
     addToCart: () => {},
     removeFromCart: () => {},
-
+    helloUser: () => {},
 });
 
 export default StoreContext;

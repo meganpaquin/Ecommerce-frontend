@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const GlobalState = (props) => {
     const [cart, setCart]= useState([]);
-    const [user, setUser]= useState({});
+    const [user, setUser]= useState("");
 
     const addToCart = (prod) => {
         let clone = [...cart];
@@ -34,12 +34,21 @@ const GlobalState = (props) => {
         setCart(clone)
     };
 
+    const helloUser = (input) => {
+        console.log('Setting up your user experience...')
+        let fname = input["fname"];
+        console.log(fname);
+        setUser(fname);
+        console.log(user);
+    };
+
     return(
         <StoreContext.Provider value={{
             cart: cart,
             user: user,
             addToCart: addToCart,
             removeFromCart: removeFromCart,
+            helloUser: helloUser,
         }}>
             {props.children}
         </StoreContext.Provider>

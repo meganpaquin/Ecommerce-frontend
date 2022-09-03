@@ -9,8 +9,12 @@ import Home from './components/home';
 import GlobalState from './store/globalState';
 import Cart from './components/cart'
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js'
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap.js';
+import $ from 'jquery';
+import Popper from 'popper.js';
+
 import "./App.css";
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 

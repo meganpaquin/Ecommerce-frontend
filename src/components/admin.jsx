@@ -1,5 +1,5 @@
 import './admin.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DataService from '../services/dataService';
 
 const Admin = () => {
@@ -7,6 +7,7 @@ const Admin = () => {
     const [product, setProduct] = useState({});
     const [discount, setDiscount] = useState({});
     const [showSuccess, setShowSuccess] = useState(false);
+    const [successCP, setSuccessCP] = useState(false);
 
     const textChange = (e) => {
         let value = e.target.value;
@@ -19,7 +20,7 @@ const Admin = () => {
     }
 
     const saveProduct = async () => {
-        console.log('Saving Product');
+        console.log('Saving Product...');
         console.log(product);
 
         //send to server
@@ -27,13 +28,30 @@ const Admin = () => {
         fixedProduct.price = parseFloat(fixedProduct.price)
 
         let instance = new DataService();
-        let savedProd = instance.saveProduct(fixedProduct);
+        let savedProd = await instance.saveProduct(fixedProduct);
 
         if(savedProd && savedProd._id){
             setShowSuccess(true);
-            setTimeout(() => {setShowSuccess(false)}, 6000 ); //miliseconds
+            setTimeout(() => {setShowSuccess(false)}, 4000 ); //miliseconds
         }
 
+    }
+
+    const saveCoupon = async () => {
+        console.log("Saving Coupon Code...");
+        console.log(discount);
+
+        //send to server
+        let copy = {...discount};
+        copy.discount = parseFloat(copy.discount);
+
+        let instance = new DataService();
+        let savedCP = await instance.saveCoupon(copy);
+
+        if(savedCP && savedCP._id){
+            setSuccessCP(true);
+            setTimeout(() => {setSuccessCP(false)}, 4000 );
+        }
 
     }
 
@@ -46,11 +64,16 @@ const Admin = () => {
         setDiscount(copy);
     }
 
-    const codeSave = () => {
-        console.log('Saving Discounts');
-        console.log(discount);
-
+    const loadCoupons = async () => {
+        let service = new DataService();
+        let allCoupons = await service.getCoupon();
+        console.log(allCoupons);
     }
+
+    useEffect(() => {
+        loadCoupons();
+    }, [])
+
 return (
     <div className='admin'>
         <h1>Store Administration</h1>
@@ -81,12 +104,13 @@ return (
                         <input type="number" className="form-control" name='price' onChange={textChange}  />
                      </div>
                 </div>
-        
+
                 <div className="mb-3 row">
-                    <label className="form-label col-sm-2">Image</label>
-                    <input className="form-control" type="file" id='file' name='image' onChange={textChange} />
-                </div>
-                
+                    <label className="col-sm-2 col-form-label">Image</label>
+                    <div className="col-sm-10">
+                        <input type="text" className="form-control" name='image' onChange={textChange}  />
+                     </div>
+                </div>                
 
                 <button className='btn btn-success' onClick={saveProduct}>Submit</button>
 
@@ -94,6 +118,8 @@ return (
 
             <section className = 'product discount'>
             <h3>Register Discounts</h3>
+
+                {successCP ? <section className='alert alert-success'>Coupon Saved</section> : null}
 
                 <div className="mb-3 row">
                     <label className="col-sm-2 col-form-label">Code</label>
@@ -109,7 +135,7 @@ return (
                      </div>
                 </div>
 
-                <button className='btn btn-success' onClick={codeSave}>Submit</button>
+                <button className='btn btn-success' onClick={saveCoupon}>Submit</button>
             </section>
         </div>
     </div>

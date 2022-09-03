@@ -1,0 +1,28 @@
+.login .btn{
+    text-decoration: none;
+    color: #a78338;
+    width: auto;
+}
+
+.login .btn:hover{
+    color: black;
+}
+
+.modal-backdrop{
+    display: none;
+    z-index: 1040 !important;
+}
+
+.modal{ 
+    background: rgb(0, 0, 0) !important; 
+    min-height:1000000px; 
+}
+
+.modal-content{
+    background: rgb(255, 255, 255) !important;
+    opacity: 1 !important;
+}
+
+.login #userNameBtn{
+    text-transform: capitalize;
+}

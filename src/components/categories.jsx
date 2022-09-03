@@ -1,10 +1,11 @@
 import './categories.css'
 
 const Categories = (inputs) => {
+
+    
     return (
         <div className = 'categories'>
-                <li>{inputs.data}</li>
-           
+                <li className="nav-link" >{inputs.data}</li>  
         </div>
     );
 }

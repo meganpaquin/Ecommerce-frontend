@@ -24,3 +24,7 @@
 .nav .btn{
     width: 80px;
 }
+
+.nav .login{
+    margin-right: 10px;
+}

@@ -2,6 +2,7 @@ import "./navBar.css";
 import {Link} from 'react-router-dom';
 import { useContext } from 'react';
 import StoreContext from "../store/storeContext";
+import Login from "./login"
 
 const NavBar = () => {
 
@@ -17,7 +18,6 @@ const NavBar = () => {
 
     return sum;
   }
-
 
   return (
     <div className="nav">
@@ -43,6 +43,7 @@ const NavBar = () => {
           </div>
         
         <form className="d-flex" role="search">
+            <Login></Login>
             <Link className="btn btn-outline-success" type="submit" to="/cart">{getNumItems()} Cart
             </Link>
         </form>
