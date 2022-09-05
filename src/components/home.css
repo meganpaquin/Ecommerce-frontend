@@ -13,7 +13,7 @@
     text-align: center;
     margin: 120px auto 0 auto;
     background-color: #febeaabd;
-    width: 80%;
+    width: 100%;
     padding: 20px;
     color: #a78338;
     font-size: 40px;
@@ -22,7 +22,7 @@
 .home h4{
     text-align: center;
     color: #a78338;
-    width: 80%;
+    width: 100%;
     padding: 20px;
     margin: 10px auto 0 auto;
     background-color: #d9eec5c1;
@@ -34,12 +34,14 @@
     text-align: center;
     color: #a78338;
     margin: 10px auto 0 auto;
-    width: 92%;
     opacity: .80;
+    width: 100%;
 }
 
 .home .container{
-    display: flex;
+    margin: 30px auto;
+    padding: 0;
+    width: 80%;
 }
 
 .home a{
