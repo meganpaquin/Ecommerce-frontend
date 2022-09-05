@@ -31,16 +31,16 @@ const Login = () => {
 
     const register = async () => {
         console.log('Registering User...');
-        console.log(userRegister);
+        let clone = userRegister;
+        clone["admin"] = "no"
 
         //send to server
         let instance = new DataService();
-        let savedUser = await instance.saveUser(userRegister);
+        let savedUser = await instance.saveUser(clone);
     }
 
     const verifyuser = async () => {
         console.log("Checking Credentials...");
-        console.log(userLogin);
         let copy = {...userLogin};
         let inputEmail = copy["login-email"];
         let inputPass = copy["login-password"];
@@ -77,7 +77,7 @@ const Login = () => {
     return(
         <div className="login">
 
-            {loggedin ? <button className='btn btn-outline-success' id="userNameBtn">{user}</button> : <button type="button" data-bs-toggle="modal" data-bs-target="#myModal" className='btn btn-outline-success' data-backdrop="false">Login</button>}
+            {loggedin ? <button className='btn btn-outline-success' id="userNameBtn">{user.fname}</button> : <button type="button" data-bs-toggle="modal" data-bs-target="#myModal" className='btn btn-outline-success' data-backdrop="false">Login</button>}
 
          
         <div className="modal fade" id="myModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

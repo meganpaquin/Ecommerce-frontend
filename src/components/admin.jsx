@@ -1,6 +1,8 @@
 import './admin.css';
 import { useState, useEffect } from 'react';
 import DataService from '../services/dataService';
+import Orders from "./orders.jsx"
+
 
 const Admin = () => {
 
@@ -8,6 +10,22 @@ const Admin = () => {
     const [discount, setDiscount] = useState({});
     const [showSuccess, setShowSuccess] = useState(false);
     const [successCP, setSuccessCP] = useState(false);
+    const [orders, setOrders] = useState([]);
+    const [coupons, setCoupons] = useState([]);
+
+    const getOrders = async () => {
+        let service = new DataService();
+        let data = await service.getOrders();
+        
+        let newArray = [];
+        for(let i=0; i < data.length; i++){
+            let object = data[i].order_data
+            newArray.push(object);
+        }
+        
+        setOrders(newArray);
+        console.log(orders);
+    }
 
     const textChange = (e) => {
         let value = e.target.value;
@@ -21,7 +39,6 @@ const Admin = () => {
 
     const saveProduct = async () => {
         console.log('Saving Product...');
-        console.log(product);
 
         //send to server
         let fixedProduct = {...product};
@@ -67,12 +84,17 @@ const Admin = () => {
     const loadCoupons = async () => {
         let service = new DataService();
         let allCoupons = await service.getCoupon();
-        console.log(allCoupons);
+        setCoupons(allCoupons);
+        console.log(coupons);
     }
 
     useEffect(() => {
         loadCoupons();
-    }, [])
+    }, []);
+
+    useEffect(() => {
+        getOrders();
+    }, []);
 
 return (
     <div className='admin'>
@@ -113,7 +135,6 @@ return (
                 </div>                
 
                 <button className='btn btn-success' onClick={saveProduct}>Submit</button>
-
             </section>
 
             <section className = 'product discount'>
@@ -137,7 +158,27 @@ return (
 
                 <button className='btn btn-success' onClick={saveCoupon}>Submit</button>
             </section>
+ 
         </div>
+            <section className='order-section'>
+                <h3>Orders</h3>
+
+                { orders.map((d) => 
+                (
+                    <Orders key={d} data={d}/>
+                ))}
+                
+            </section>
+
+            <section className='discounts-section'>
+                <h3>Discounts</h3>
+
+                { coupons.map((d) => 
+                (
+                    <li key={d} data={d}>This is a coupon</li>
+                ))}
+                
+            </section>
     </div>
 );
 

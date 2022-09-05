@@ -26,3 +26,22 @@
     width: 100%;
     background-color: #f3e5d0d0;
 }
+
+.catalog a{
+    text-decoration: none;
+    color: black;   
+    margin: 10px; 
+}
+
+.catalog a:hover{
+    color: red;
+}
+
+.catalog .categories{
+    color: black;
+}
+
+.catalog .categories:hover{
+    color: red;
+    cursor: pointer;
+}

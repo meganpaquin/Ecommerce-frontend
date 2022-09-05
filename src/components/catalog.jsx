@@ -32,20 +32,41 @@ const Catalog = () => {
         loadData();
     }, []);
 
+    const filterData = async (cat) => {
+        let service = new DataService();
+        let data = await service.getCategories(cat);
+        setProducts(data);
+    }
+
+    const showDeals = async () => {
+        let service = new DataService();
+        let data = await service.getDeals();
+        setProducts(data);
+    }
+
     return(
         <div className='catalog'>
             
-
+            <div className="top">
             <div className='filter'>
+                <a href="#" onClick={loadData}>All</a>
+                <a href="#" onClick={showDeals}>Deals</a>
                 {categories.map((d) =>
                 (
-                    <Categories key={d} data={d}></Categories>
+                    <Categories key={d} data={d} onClick={filterData}></Categories>
                 ))}
             </div>
 
             <div className='inventory container'>
                 { products.map((d) => 
                 (<Product key={d._id} data={d}></Product>))}
+            </div>
+            </div>
+
+            <div className="Bottom">
+            <div>
+                
+            </div>
             </div>
         </div>
     )

@@ -7,6 +7,7 @@
     left: 0;
     width: 100%;
     height: 100%; 
+    overflow: scroll;
 }
 
 .admin .parent {
@@ -57,4 +58,14 @@
 
 .admin .product{
     background-color: #d9eec5c1;
+}
+
+.admin .order-section h3{
+    margin: 0 auto 10px auto;
+    background-color: #febeaabd;
+    width: 100%;
+    padding: 20px;
+    color: #a78338;
+    font-size: 20px;
+    text-align: center
 }

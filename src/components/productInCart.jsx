@@ -3,6 +3,11 @@ import './productInCart.css'
 
 const ProductInCart = (properties) => {
 
+    const clickme = () => {
+        properties.onClick(properties.data);
+    }
+
+
     return(
         <div className="productincart">
             <div className='information'>
@@ -23,7 +28,7 @@ const ProductInCart = (properties) => {
                     <span className='numbers'>{properties.data.quantity*properties.data.price}</span>
                 </div>
 
-                <span className="trash btn btn-danger">🗑️</span>
+                <span className="trash btn btn-danger" onClick={clickme}>🗑️</span>
             </div>
         </div>
 

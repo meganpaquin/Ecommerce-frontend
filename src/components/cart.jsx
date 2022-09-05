@@ -2,10 +2,14 @@ import './cart.css'
 import { useContext } from 'react';
 import StoreContext from '../store/storeContext';
 import ProductInCart from './productInCart'
+import Checkout from "./checkout.jsx"
 
 const Cart = () => {
 
-    const cart = useContext(StoreContext).cart
+    const cart = useContext(StoreContext).cart;
+    const del = useContext(StoreContext).removeFromCart;
+
+
     const getNumItems = () => {
         let sum = 0;
 
@@ -39,10 +43,10 @@ const Cart = () => {
                 <h5>We have {getNumItems()} items ready for you</h5>
 
                 {cart.map((d)=>
-                    (<ProductInCart key={d._id} data={d}></ProductInCart>)
+                    (<ProductInCart onClick={del} key={d._id} data={d}></ProductInCart>)
                 )}
 
-                <span className='total_price'>Total Cost: <span className='the_price'>${totalCost()}</span></span>
+                <span className='total_price'>Total Cost: <span className='the_price'>${totalCost()} <Checkout/></span></span>
             </div>
         </div>
     )

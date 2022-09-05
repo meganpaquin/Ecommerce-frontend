@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const GlobalState = (props) => {
     const [cart, setCart]= useState([]);
-    const [user, setUser]= useState("");
+    const [user, setUser]= useState([]);
 
     const addToCart = (prod) => {
         let clone = [...cart];
@@ -29,17 +29,23 @@ const GlobalState = (props) => {
         console.log("removing product from cart")
 
         //remove prod from the array
-        let clone = [...cart]
-        //add the loop to find the correct one to remove here
-        setCart(clone)
+        let clone = [...cart];
+
+        for(let i=0; i < clone.length; i++){
+            let clone_id = clone[i]._id;
+            let prod_id = prod._id;
+
+            if(clone_id === prod_id){
+                clone.splice(i, 1);
+                i--
+            }
+        }
+        setCart(clone);
     };
 
     const helloUser = (input) => {
         console.log('Setting up your user experience...')
-        let fname = input["fname"];
-        console.log(fname);
-        setUser(fname);
-        console.log(user);
+        setUser(input)
     };
 
     return(

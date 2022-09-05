@@ -11,7 +11,7 @@ class DataService{
     }
 
     async saveProduct(prod){
-        let response = await axios.post(this.serverURL + "/api/catalog", prod);
+        let response = await axios.post(this.serverURL + "/api/products/", prod);
         return response.data;
     }
 
@@ -37,6 +37,37 @@ class DataService{
 
     async getCategories(category){
         let response = await axios.get(this.serverURL + "/api/products/" + category);
+        return response.data;
+    }
+
+    async saveOrder(order){
+
+        let payload = {
+            "order_data": order
+        }
+
+        await axios({
+            url: "http://127.0.0.1:5000/api/order" ,
+            method: 'post',
+            data: payload
+        })
+        .then(function (response) {
+            // your action after success
+            console.log(response);
+        })
+        .catch(function (error) {
+           // your action on error success
+            console.log(error);
+        });
+    }
+
+    async getDeals(){
+        let response = await axios.get(this.serverURL + "/api/catalog/deals");
+        return response.data;
+    }
+
+    async getOrders(){
+        let response = await axios.get(this.serverURL + "/api/order");
         return response.data;
     }
 }
