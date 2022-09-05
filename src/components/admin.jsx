@@ -16,15 +16,9 @@ const Admin = () => {
     const getOrders = async () => {
         let service = new DataService();
         let data = await service.getOrders();
-        
-        let newArray = [];
-        for(let i=0; i < data.length; i++){
-            let object = data[i].order_data
-            newArray.push(object);
-        }
-        
-        setOrders(newArray);
-        console.log(orders);
+        console.log(data);
+        setOrders(data);
+  
     }
 
     const textChange = (e) => {
@@ -85,7 +79,6 @@ const Admin = () => {
         let service = new DataService();
         let allCoupons = await service.getCoupon();
         setCoupons(allCoupons);
-        console.log(coupons);
     }
 
     useEffect(() => {
@@ -161,23 +154,27 @@ return (
  
         </div>
             <section className='order-section'>
-                <h3>Orders</h3>
+                <h4>Orders</h4>
 
                 { orders.map((d) => 
                 (
-                    <Orders key={d} data={d}/>
+                    <Orders key={Math.random()} data={d}/>
                 ))}
                 
             </section>
 
             <section className='discounts-section'>
-                <h3>Discounts</h3>
+                <h4>Discounts</h4>
 
-                { coupons.map((d) => 
+                { coupons.map((d) =>
                 (
-                    <li key={d} data={d}>This is a coupon</li>
+                    <div key={Math.random()} className="coupon-map container">
+                        <li><span>Coupon Code:</span>{d.code}</li>
+                        <li><span>Discount:</span> %{d.discount}</li>
+                        <button className='btn btn-danger'>🗑️</button>
+                    </div>
                 ))}
-                
+
             </section>
     </div>
 );

@@ -60,7 +60,7 @@
     background-color: #d9eec5c1;
 }
 
-.admin .order-section h3{
+.admin h4{
     margin: 0 auto 10px auto;
     background-color: #febeaabd;
     width: 100%;
@@ -68,4 +68,35 @@
     color: #a78338;
     font-size: 20px;
     text-align: center
+}
+
+.admin .coupon-map{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    background-color: #d9eec5c1;
+    padding: 20px;
+    margin: 10px auto;
+    font-size: 20px;
+    width: 60%;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.admin .coupon-map span{
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.admin .coupon-map li{
+    margin: 0 20px;
+}
+
+.admin .btn-danger{
+    margin: 0 auto;
+    padding: 0;
+    width: 50px;
+    height: 50px;
 }

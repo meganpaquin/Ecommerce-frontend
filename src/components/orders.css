@@ -1,0 +1,48 @@
+.orders .buttons{
+    display: flex;
+    flex-direction: row;
+}
+
+.orders .btn{
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+    padding: 0;
+}
+
+.orders .order-data{
+    display: flex;
+    flex-direction: row;
+    background-color: #d9eec5c1;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.orders .order-titles .title-qty{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.orders .order-number{
+    margin-top: 25px;
+    margin-right: 20px;
+    width: 160px;
+}
+
+.orders .order-status{
+    margin: 0 30px;
+    padding-top: 20px;
+}
+
+.orders .qty{
+    margin-left: 20px;
+}
+
+.orders .title{
+    width: 300px;
+}
+
