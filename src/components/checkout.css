@@ -1,4 +1,18 @@
-.modal-backdrop{
+.checkout .modal-backdrop{
     display: none;
-    z-index: 1060 !important;
+    z-index: 2000 !important;
+}
+
+.checkout .modal{ 
+    background: rgb(0, 0, 0) !important; 
+    min-height:1000000px; 
+}
+
+.checkout .modal-content{
+    background: rgb(255, 255, 255) !important;
+    opacity: 1 !important;
+}
+
+.modal{
+    --bs-modal-zindex: 2000 !important;
 }

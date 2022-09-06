@@ -2,11 +2,13 @@ import './categories.css'
 import { useState } from 'react';
 
 const Categories = (inputs) => {
-    const [name, setName] = useState("");
 
     const clickme = () => {
-        setName(inputs.data);
-        inputs.onClick(name);
+        if(inputs.data){
+            inputs.onClick(inputs.data);
+        }else{
+            console.log("No Category Found");
+        }  
     }
     
     return (

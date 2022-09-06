@@ -2,6 +2,8 @@ import './login.css'
 import { useState, useContext } from 'react';
 import DataService from '../services/dataService';
 import StoreContext from '../store/storeContext';
+import LoginModal from "./loginModal.jsx";
+import RegisterModal from "./registerModal.jsx";
 
 const Login = () => {
     const [userLogin, setuserLogin] = useState({});
@@ -32,11 +34,16 @@ const Login = () => {
     const register = async () => {
         console.log('Registering User...');
         let clone = userRegister;
-        clone["admin"] = "no"
 
-        //send to server
-        let instance = new DataService();
-        let savedUser = await instance.saveUser(clone);
+        if(userRegister == {}){
+           console.error("Enter the required fields")
+        }else{
+            clone["admin"] = "no"
+            //send to server
+            let instance = new DataService();
+            let savedUser = await instance.saveUser(clone);
+        }
+        
     }
 
     const verifyuser = async () => {
@@ -58,20 +65,18 @@ const Login = () => {
             }else{
             console.error("Passwords Do Not Match");
             setFailure(true);
-            }
+            };
 
-            helloUser(serverData);
-
+            if(!failure){
+                helloUser(serverData);
+            };
+            
             if ( !user ){
                 setLoggedin(false);
             }else{
                 setLoggedin(true);
             }
-
         }
-
-        
-
     }
 
     return(
@@ -101,14 +106,14 @@ const Login = () => {
 
               
                     <div className="text-center">
-                    <button type="button" data-bs-toggle="modal" data-bs-target="#registerModal" className='btn btn-outline-success' data-backdrop="false">Register</button>
-                    <button type="button" className='btn btn-outline-success' onClick={verifyuser}>Login</button>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#registerModal" className='btn btn-outline-success register-btn' data-backdrop="false">Register</button>
+                    <button type="button" className='btn btn-outline-success login-btn' onClick={verifyuser}>Login</button>
                     </div>
                 </div>
                 </div>
             </div>
             </div>
-            </div>
+        </div>
 
 
         <div className="modal fade" id="registerModal" tabIndex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

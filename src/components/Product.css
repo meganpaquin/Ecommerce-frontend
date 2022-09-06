@@ -1,7 +1,7 @@
 .product{
     border: 2px solid black;
     width: 200px;
-    background-color: #febeaab3;
+    background-color: #febeaada;
     border-radius: 5px;
     box-shadow: 1px 1px 5px gray, -1px -1px 5px;
 }

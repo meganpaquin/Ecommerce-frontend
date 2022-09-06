@@ -8,6 +8,7 @@
     width: 100%;
     height: 100%;
     overflow: scroll;
+    padding-bottom: 80px;
 }
 
 .cart h1{
@@ -24,7 +25,7 @@
     text-align: center;
     color: #a78338;
     width: 80%;
-    height: 380px;
+    height: auto;
     padding: 20px;
     margin: 10px auto 0 auto;
     background-color: #d9eec5c1;
@@ -34,19 +35,35 @@
     margin: 5px;
 }
 
-.cart .total_price{
+.cart .checkout-box{
     border: 2px solid black;
     border-radius: 5px;
     text-align: left;
-    margin-left: 69.5%;
     padding: 10px;
     display: block;
-    width: 200px;
+    width: 300px;
     background-color: #d9eec5;
     box-shadow: 1px 1px 3px black, -1px -1px 3px gray;
     font-weight: bold;
+    display: flex;
+    flex-direction: row;
 }
 
 .cart .the_price{
     padding-left: 20px;
+    padding-top: 6px;
+    font-weight: normal;
+}
+
+.cart .total_price{
+    padding-top: 6px;
+}
+
+.cart .checkout{
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.cart .container{
+    margin: 0 auto;
 }

@@ -46,7 +46,11 @@ const Cart = () => {
                     (<ProductInCart onClick={del} key={d._id} data={d}></ProductInCart>)
                 )}
 
-                <span className='total_price'>Total Cost: <span className='the_price'>${totalCost()} <Checkout/></span></span>
+                <div className="checkout-box container">
+                    <span className='total_price'>Total Cost:</span>
+                    <span className='the_price'>${totalCost()} </span>
+                    <Checkout/>
+                </div>
             </div>
         </div>
     )

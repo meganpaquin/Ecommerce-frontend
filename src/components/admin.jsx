@@ -169,9 +169,13 @@ return (
                 { coupons.map((d) =>
                 (
                     <div key={Math.random()} className="coupon-map container">
-                        <li><span>Coupon Code:</span>{d.code}</li>
-                        <li><span>Discount:</span> %{d.discount}</li>
-                        <button className='btn btn-danger'>🗑️</button>
+                        <div className="data-coupon">
+                            <li className="code"><span>Coupon Code:</span>{d.code}</li>
+                            <li><span>Discount:</span> %{d.discount}</li>
+                        </div>
+                        <div className="coupon-btns">
+                            <button className='btn btn-danger'>🗑️</button>
+                        </div>
                     </div>
                 ))}
 

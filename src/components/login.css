@@ -26,3 +26,11 @@
 .login #userNameBtn{
     text-transform: capitalize;
 }
+
+.login .register-btn{
+    margin: 5px;
+}
+
+.login .login-btn{
+    margin: 5px;
+}

@@ -33,9 +33,18 @@ const Catalog = () => {
     }, []);
 
     const filterData = async (cat) => {
-        let service = new DataService();
-        let data = await service.getCategories(cat);
-        setProducts(data);
+
+        console.log(cat);
+
+        if(cat){
+            let service = new DataService();
+            let data = await service.getCategories(cat);
+            console.log(data);
+            setProducts(data);
+        }else{
+            console.error("No Category Selected");
+        }
+        
     }
 
     const showDeals = async () => {
